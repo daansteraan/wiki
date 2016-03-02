@@ -1,0 +1,28 @@
+html {
+  min-height:100%;
+}
+
+body {
+  background-color: #ccffff;
+  text-align: center;
+  font-family: impact;
+  color:#009999;
+}
+h1 {
+  padding: 20px 0px 30px;
+}
+input {
+  padding 10px 10px 10px;
+}
+
+.result {
+  text-align:justify;
+  padding: 3% 30% 0%;
+  font-family: arial;
+}
+
+footer {
+  bottom: 0;
+  position: fixed;
+  width:90%;
+}
