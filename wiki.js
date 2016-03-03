@@ -1,13 +1,18 @@
 $(document).ready(function() {
 
-
-    /* still in the process of finding out how to bind enter key to the submission of the input in search text field*/
-	$('#search').keypress(function (e) {
+    /*BIND ENTER-KEY TO SEARCH BUTTON BY WRAPPING SEARCH IN A FUNCTION*/
+	
+	$('#request').keypress(function(e) {
+	  
 	  if (e.which == 13) {
-		$('#request').click() /*getting ridiculous now*/;
+		wikisearch();
+		
+		/*getting ridiculous now*/;
 	  };
 	});
 
+	
+	/*GET RANDOM WIKIPEDIA ARTICLE*/
   $("#getRandom").on("click",function() {
     
     var randomUrl = "http://en.wikipedia.org/w/api.php?action=query&generator=random&grnnamespace=0&prop=extracts&format=json&callback=?&exintro=";
@@ -30,9 +35,16 @@ $(document).ready(function() {
   });
   
   
+  /*FUNCTION TRIGGERED ON CLICK OF SEARCH BUTTON*/
+  
   $("#request").on("click", function() {
+	  
+	  wikisearch()
+  });
 
-    var search = $("#search").val();
+  function wikisearch() {
+		
+	var search = $("#search").val();
     var s = search.replace(/ /g, "%20");
 
     var url = "http://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&redirects=&exintro=&callback=?&titles=" + s;
@@ -62,6 +74,8 @@ $(document).ready(function() {
 
     });
 
-  });
+  };
+ 
+  
 
 });
